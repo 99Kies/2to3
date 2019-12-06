@@ -20,7 +20,7 @@ def tochange(path):
             if 'py' in i and len(i.split('.')) == 2: # 如果不为文件夹并且为python文件则进行转换
                 dir = path+path_sprit+i
                 print(dir)
-                # print((os.system(r'python 2to3.py -w %s' % dir)))
+                print((os.system(r'python 2to3.py -w %s' % dir)))
                 # Make the conversion if you through: pip install 2to3 .can use: os.system(r'2to3 -w %s' % dir）
 
 
@@ -33,3 +33,4 @@ if __name__ == '__main__':
     except:
         print("Error, You Need Offer A Filepath!!! ")
     tochange(path)
+
