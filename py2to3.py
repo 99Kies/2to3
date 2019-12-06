@@ -16,8 +16,8 @@ def py2to3(path):
         path2 = os.path.join(path, i)
         if os.path.isdir(path2): # 如果为文件夹，则进入递归
             py2to3(path2)
-        else:
-            if 'py' == i.split('.')[1] and len(i.split('.')) == 2: # 如果不为文件夹并且为python文件则进行转换
+        elif len(i.split('.')) == 2:
+            if 'py' in i.split('.')[1]:  # 如果不为文件夹并且为python文件则进行转换
                 dir = path+path_sprit+i
                 print(dir)
                 print(os.system(r'python 2to3.py -w %s' % dir))
